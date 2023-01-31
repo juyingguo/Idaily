@@ -18,6 +18,7 @@ import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
 import com.liuguangqiang.idaily.entity.Story;
 import com.liuguangqiang.idaily.app.BaseActivity;
 import com.liuguangqiang.idaily.adapter.WebViewAdapter;
+import com.liuguangqiang.idaily.utils.HtmlUtil;
 
 import java.util.ArrayList;
 
@@ -80,6 +81,9 @@ public class StoryActivity extends BaseActivity {
                 binding.collapsingToolbarLayout.setTitle(story.title);
                 Glide.with(StoryActivity.this).load(story.getImage()).into(binding.ivPic);
                 adapter.addData(story);
+                //webView页面数据加载
+//                String htmlData = HtmlUtil.createHtmlData(story, false);
+//                binding.wvNews.loadData(htmlData, HtmlUtil.MIME_TYPE, HtmlUtil.ENCODING);
             }
         });
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) binding.toolbar.getLayoutParams();

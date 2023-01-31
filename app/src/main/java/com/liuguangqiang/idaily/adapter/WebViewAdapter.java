@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+import timber.log.Timber;
+
 /**
  * 详情页adapter
  * Created by Eric on 15/6/6.
@@ -22,6 +24,7 @@ public class WebViewAdapter extends BaseQuickAdapter<Story, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, Story item) {
+        Timber.d("convert:" + item);
         ItemWebviewBinding binding = ItemWebviewBinding.bind(helper.itemView);
         binding.webView.loadData(getBody(item), "text/html; charset=UTF-8", null);
     }

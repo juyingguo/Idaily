@@ -26,6 +26,7 @@ public class Story extends BaseEntity implements Parcelable {
     public String body;
 
     public List<String> css;
+    public List<String> js;
 
     public String share_url;
 
@@ -33,6 +34,14 @@ public class Story extends BaseEntity implements Parcelable {
 
     public List<String> getCss() {
         return css;
+    }
+
+    public List<String> getJs() {
+        return js;
+    }
+
+    public void setJs(List<String> js) {
+        this.js = js;
     }
 
     public void setCss(List<String> css) {
